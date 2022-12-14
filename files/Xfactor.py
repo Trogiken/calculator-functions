@@ -45,11 +45,11 @@ while True:
 
     if bottom_number < 0:
         is_negative = True
-        print(f"Pairs: +- {factors['pairs']}")
-        print(f"Solutions: +- {factors['solutions']}")
+        print("Pairs: +- " + str(factors['pairs']))
+        print("Solutions: +- " + str(factors['solutions']))
     else:
-        print(f"Pairs: {factors['pairs']}")
-        print(f"Solutions: {factors['solutions']}")
+        print("Pairs: " + str(factors['pairs']))
+        print("Solutions: " + str(factors['solutions']))
 
     # Use pairs to test if they add together to get top_number
     # If negative do the same as in step one but have to make every number negative and positive
