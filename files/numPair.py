@@ -2,6 +2,7 @@ print("""
 Number Factorizer
 -----------------
 List all the factors of a number
+(0 to quit)
 
 """)
 
@@ -36,22 +37,19 @@ def list_factors(num):
     return {'pairs': all_pairs, 'solutions': all_solutions}
 
 
-def main():
+while True:
     user_input = int(input('> '))
     factors = list_factors(user_input)
 
-    while True:
-        if user_input < 0:
-            print("Pairs: +- " + str(factors['pairs']))
-            print("Solutions: +- " + str(factors['solutions']))
-            print("Best Solution: +- " + str(factors['pairs'][-1]))
-        else:
-            print("Pairs: " + str(factors['pairs']))
-            print("Solutions: " + str(factors['solutions']))
-            print("Best Solution: " + str(factors['pairs'][-1]))
+    if user_input < 0:
+        print("Pairs: +- " + str(factors['pairs']))
+        print("Solutions: +- " + str(factors['solutions']))
+        print("Best Solution: +- " + str(factors['pairs'][-1]))
+    elif user_input > 0:
+        print("Pairs: " + str(factors['pairs']))
+        print("Solutions: " + str(factors['solutions']))
+        print("Best Solution: " + str(factors['pairs'][-1]))
+    else:  # user_input == 0
+        break
 
-        print() # Blank line
-
-
-if __name__ == '__main__':
-    main()
+    print() # Blank line
