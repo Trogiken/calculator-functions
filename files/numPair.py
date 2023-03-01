@@ -1,8 +1,7 @@
 print("""
-X Factor Solver
----------------
-When a == 1: b on top, c on bottom
-When a > 1: b on top, (c * a) on bottom
+Number Factorizer
+-----------------
+List all the factors of a number
 
 """)
 
@@ -20,6 +19,7 @@ def list_factors(num):
             all_solutions.append(dividend)
         dividend += 1
 
+    # Create pairs of solutions
     all_pairs = []
     interator = 1
     for i in range(0, len(all_solutions)):
@@ -36,22 +36,22 @@ def list_factors(num):
     return {'pairs': all_pairs, 'solutions': all_solutions}
 
 
-while True:
-    is_negative = False
+def main():
+    user_input = int(input('> '))
+    factors = list_factors(user_input)
 
-    top_number = int(input('Top Number: '))
-    bottom_number = int(input('Bottom Number: '))
-    factors = list_factors(bottom_number)
+    while True:
+        if user_input < 0:
+            print("Pairs: +- " + str(factors['pairs']))
+            print("Solutions: +- " + str(factors['solutions']))
+            print("Best Solution: +- " + str(factors['pairs'][-1]))
+        else:
+            print("Pairs: " + str(factors['pairs']))
+            print("Solutions: " + str(factors['solutions']))
+            print("Best Solution: " + str(factors['pairs'][-1]))
 
-    if bottom_number < 0:
-        is_negative = True
-        print("Pairs: +- " + str(factors['pairs']))
-        print("Solutions: +- " + str(factors['solutions']))
-    else:
-        print("Pairs: " + str(factors['pairs']))
-        print("Solutions: " + str(factors['solutions']))
+        print() # Blank line
 
-    # Use pairs to test if they add together to get top_number
-    # If negative do the same as in step one but have to make every number negative and positive
 
-    print()  # Separate future inputs
+if __name__ == '__main__':
+    main()
