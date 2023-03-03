@@ -38,13 +38,14 @@ def list_factors(num):
 while True:
     print('(0 to quit)')
     user_input = int(input('>'))
-    factors = list_factors(user_input)
 
     if user_input < 0:
+        factors = list_factors(user_input)
         print("Pairs: +- " + str(factors['pairs']))
         print("Solutions: +- " + str(factors['solutions']))
         print("Best: +- " + str(factors['pairs'][-1]))
     elif user_input > 0:
+        factors = list_factors(user_input)
         print("Pairs: " + str(factors['pairs']))
         print("Solutions: " + str(factors['solutions']))
         print("Best: " + str(factors['pairs'][-1]))
