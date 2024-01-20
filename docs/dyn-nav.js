@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('shared-nav-container').innerHTML = `
         <nav class="sidebar">
+            <h2>Docs Pages</h2>
             <ul>
                 <li><a href="introduction.html">Introduction</a></li>
                 <li><a href="installation.html">Installation</a></li>
